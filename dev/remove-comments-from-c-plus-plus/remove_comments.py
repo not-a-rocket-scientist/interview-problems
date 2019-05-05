@@ -34,6 +34,7 @@ def remove_comments(some_str: str) -> str:
             if state is None:
                 if char == '"':
                     state = '"'
+                    skip_slash = False
                 elif prev == '/':
                     if char in {'/', '*'}:
                         state = prev + char
